@@ -1,3 +1,4 @@
+// script.js
 // Mobile Menu Toggle
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mainNav = document.getElementById('mainNav');
@@ -82,8 +83,7 @@ const cleaningForm = document.getElementById('cleaningForm');
 cleaningForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    // Here you would normally send the form data to your server
-    // For this example, we'll just show an alert
+    // Form submission logic would go here
     alert('Thank you for your booking request! We will contact you shortly to confirm your appointment.');
     cleaningForm.reset();
     
