@@ -8,42 +8,93 @@ mobileMenuBtn.addEventListener('click', () => {
         '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
 });
 
-// Smooth Scroll for Anchor Links
+// Smooth Scrolling for Anchor Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
+        
+        if(this.getAttribute('href') === '#') return;
+        
         const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
+        if(target) {
+            window.scrollTo({
+                top: target.offsetTop - 80,
+                behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            if(mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
         }
-        mainNav.classList.remove('active'); // Close menu on mobile
-        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
     });
 });
 
-// Basic Slider
-let slideIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const nextBtn = document.querySelector('.next');
-const prevBtn = document.querySelector('.prev');
+// Services Tab System
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.services-content');
 
-function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    slides[index].classList.add('active');
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active class from all buttons and contents
+        tabBtns.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to clicked button and corresponding content
+        btn.classList.add('active');
+        const tabId = btn.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+    });
+});
+
+// Testimonial Slider
+const testimonials = document.querySelectorAll('.testimonial');
+const dots = document.querySelectorAll('.slider-dot');
+let currentTestimonial = 0;
+
+function showTestimonial(index) {
+    testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    testimonials[index].classList.add('active');
+    dots[index].classList.add('active');
+    currentTestimonial = index;
 }
 
-function nextSlide() {
-    slideIndex = (slideIndex + 1) % slides.length;
-    showSlide(slideIndex);
-}
+dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+        const slideIndex = parseInt(dot.getAttribute('data-slide'));
+        showTestimonial(slideIndex);
+    });
+});
 
-function prevSlide() {
-    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-    showSlide(slideIndex);
-}
+// Auto-rotate testimonials
+setInterval(() => {
+    let nextTestimonial = currentTestimonial + 1;
+    if(nextTestimonial >= testimonials.length) nextTestimonial = 0;
+    showTestimonial(nextTestimonial);
+}, 5000);
 
-nextBtn.addEventListener('click', nextSlide);
-prevBtn.addEventListener('click', prevSlide);
+// Form Submission
+const cleaningForm = document.getElementById('cleaningForm');
 
-// Auto-slide (optional)
-setInterval(nextSlide, 5000);
+cleaningForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Here you would normally send the form data to your server
+    // For this example, we'll just show an alert
+    alert('Thank you for your booking request! We will contact you shortly to confirm your appointment.');
+    cleaningForm.reset();
+    
+    // Scroll to top
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Set minimum date for booking to today
+const dateInput = document.getElementById('date');
+const today = new Date().toISOString().split('T')[0];
+dateInput.setAttribute('min', today);
