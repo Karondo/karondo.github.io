@@ -3,79 +3,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PristinePro Carpet Cleaning</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>PristinePro Carpet Cleaning | Deep Clean Guarantee</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<header>
-    <div class="logo">PristinePro</div>
-    <nav id="mainNav">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
-</header>
-
-<section class="hero">
-    <h1>Professional Carpet Cleaning</h1>
-    <p>We keep your carpets fresh and clean.</p>
-    <a href="#contact" class="btn">Get a Quote</a>
-</section>
-
-<section class="services" id="services">
-    <h2>Our Services</h2>
-    <div class="service-list">
-        <div class="service-item">
-            <i class="fas fa-broom"></i>
-            <h3>Residential Cleaning</h3>
-            <p>Deep cleaning for homes and apartments.</p>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Pristine<span>Pro</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#booking">Book Now</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="service-item">
-            <i class="fas fa-building"></i>
-            <h3>Commercial Cleaning</h3>
-            <p>Efficient services for businesses and offices.</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Professional Carpet Cleaning You Can Trust</h1>
+                <p>We use advanced cleaning technology to remove deep-down dirt, allergens, and stubborn stains - leaving your carpets fresh, clean, and looking like new.</p>
+                <div class="hero-btns">
+                    <a href="#booking" class="btn">Book Online Now</a>
+                    <a href="tel:+18005551234" class="btn btn-accent">Call Now</a>
+                </div>
+                <div class="phone-cta">
+                    <i class="fas fa-phone"></i>
+                    <span>800-555-1234</span>
+                </div>
+            </div>
         </div>
-        <div class="service-item">
-            <i class="fas fa-car"></i>
-            <h3>Car Upholstery</h3>
-            <p>Refresh your vehicle's interior.</p>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose PristinePro?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>24/7 Emergency Service</h3>
+                    <p>Spilled red wine at 2am? We're available around the clock for emergency stain removal.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Eco-Friendly Solutions</h3>
+                    <p>Our green-certified cleaning products are safe for kids, pets, and the environment.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>100% Satisfaction</h3>
+                    <p>If you're not completely happy, we'll reclean your carpets at no additional cost.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Same-Day Service</h3>
+                    <p>Need your carpets cleaned today? We offer same-day appointments in most areas.</p>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="about" id="about">
-    <h2>About Us</h2>
-    <p>With 10+ years of experience, PristinePro delivers top-notch carpet and upholstery cleaning services. Our certified technicians use eco-friendly products and the latest equipment to ensure your satisfaction.</p>
-</section>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Cleaning Services</h2>
+            <div class="services-tabs">
+                <button class="tab-btn active" data-tab="residential">Residential</button>
+                <button class="tab-btn" data-tab="commercial">Commercial</button>
+                <button class="tab-btn" data-tab="specialty">Specialty</button>
+            </div>
+            
+            <div class="services-content active" id="residential">
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');"></div>
+                    <div class="service-info">
+                        <h3>Standard Deep Cleaning</h3>
+                        <div class="service-price">From $49 per room</div>
+                        <ul class="service-features">
+                            <li>Hot water extraction method</li>
+                            <li>Pre-treatment of high-traffic areas</li>
+                            <li>Stain removal application</li>
+                            <li>Deodorizer application</li>
+                            <li>2-4 hour drying time</li>
+                        </ul>
+                        <a href="#booking" class="btn">Book This Service</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1583845140117-7f9c8b6dc3a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');"></div>
+                    <div class="service-info">
+                        <h3>Pet Treatment Package</h3>
+                        <div class="service-price">From $79 per room</div>
+                        <ul class="service-features">
+                            <li>Special enzyme treatment for pet stains</li>
+                            <li>Odor neutralization</li>
+                            <li>Anti-microbial application</li>
+                            <li>Includes standard deep cleaning</li>
+                            <li>Pet-safe products</li>
+                        </ul>
+                        <a href="#booking" class="btn">Book This Service</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="services-content" id="commercial">
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');"></div>
+                    <div class="service-info">
+                        <h3>Office Cleaning</h3>
+                        <div class="service-price">From $0.25/sq ft</div>
+                        <ul class="service-features">
+                            <li>After-hours service available</li>
+                            <li>Low-moisture cleaning for quick drying</li>
+                            <li>Commercial-grade equipment</li>
+                            <li>Customized cleaning schedule</li>
+                            <li>EPA-approved disinfectants</li>
+                        </ul>
+                        <a href="#booking" class="btn">Book This Service</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="services-content" id="specialty">
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');"></div>
+                    <div class="service-info">
+                        <h3>Area Rug Cleaning</h3>
+                        <div class="service-price">From $99 per rug</div>
+                        <ul class="service-features">
+                            <li>Hand-washed or specialized machine cleaning</li>
+                            <li>Dust mite removal</li>
+                            <li>Gentle on delicate fibers</li>
+                            <li>Stain protection available</li>
+                            <li>Pickup and delivery service</li>
+                        </ul>
+                        <a href="#booking" class="btn">Book This Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="slider">
-    <h2>Our Work</h2>
-    <div class="slider-container">
-        <div class="slide active"><img src="https://via.placeholder.com/800x400?text=Clean+Carpet+1" alt="Clean Carpet 1"></div>
-        <div class="slide"><img src="https://via.placeholder.com/800x400?text=Clean+Carpet+2" alt="Clean Carpet 2"></div>
-        <div class="slide"><img src="https://via.placeholder.com/800x400?text=Clean+Carpet+3" alt="Clean Carpet 3"></div>
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
-    </div>
-</section>
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Before & After Transformations</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="Dirty carpet">
+                    <div class="gallery-overlay">
+                        <h3>Pet Stain Removal</h3>
+                        <p>Complete odor elimination</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="Clean carpet">
+                    <div class="gallery-overlay">
+                        <h3>Deep Soil Removal</h3>
+                        <p>High-traffic area restoration</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="Stained carpet">
+                    <div class="gallery-overlay">
+                        <h3>Wine Stain Removal</h3>
+                        <p>Emergency service call</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="Office carpet">
+                    <div class="gallery-overlay">
+                        <h3>Commercial Cleaning</h3>
+                        <p>Office space renewal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-</section>
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial active">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah J." class="testimonial-img">
+                    <p class="testimonial-text">"I had an old red wine stain that every other company said was permanent. PristinePro got it out completely! My carpet looks brand new. Worth every penny."</p>
+                    <p class="testimonial-author">- Sarah J.</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="testimonial-img">
+                    <p class="testimonial-text">"As a landlord, I use PristinePro between tenants. They always make the carpets look move-in ready, which helps me rent properties faster."</p>
+                    <p class="testimonial-author">- Michael T.</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Lisa R." class="testimonial-img">
+                    <p class="testimonial-text">"Their pet odor treatment saved my living room after my new puppy had multiple accidents. No more smells and the carpet looks amazing!"</p>
+                    <p class="testimonial-author">- Lisa R.</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <div class="slider-dot active" data-slide="0"></div>
+                <div class="slider-dot" data-slide="1"></div>
+                <div class="slider-dot" data-slide="2"></div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <p>&copy; 2025 PristinePro Carpet Cleaning. All rights reserved.</p>
-</footer>
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <h2 class="section-title">Book Your Cleaning Today</h2>
+            <div class="booking-form">
+                <form id="cleaningForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="standard">Standard Deep Cleaning</option>
+                            <option value="pet">Pet Treatment Package</option>
+                            <option value="rug">Area Rug Cleaning</option>
+                            <option value="commercial">Commercial Cleaning</option>
+                            <option value="emergency">Emergency Stain Removal</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Special Instructions</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <button type="submit" class="btn form-submit">Schedule My Cleaning</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-<script src="script.js"></script>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>PristinePro</h3>
+                    <p>Professional carpet and upholstery cleaning services with a 100% satisfaction guarantee. Serving the community since 2005.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#booking">Booking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Residential Cleaning</a></li>
+                        <li><a href="#">Commercial Cleaning</a></li>
+                        <li><a href="#">Pet Stain Removal</a></li>
+                        <li><a href="#">Area Rug Cleaning</a></li>
+                        <li><a href="#">Emergency Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Clean Street, Suite 100<br>Anytown, ST 12345</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>800-555-1234</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@pristinepro.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>24/7 Emergency Service Available</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 PristinePro Carpet Cleaning. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
