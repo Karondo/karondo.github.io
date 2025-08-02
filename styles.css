@@ -1250,4 +1250,17 @@ html {
         background: linear-gradient(to top, rgba(0,45,114,0.6) 0%, transparent 100%);
     }
 }
+
+
+#about {
+    scroll-margin-top:13vh; 
+}
+
+#quote {
+    scroll-margin-top:-7vh; 
+
+}
+#services {
+    scroll-margin-top: 3vh; 
+}
  
