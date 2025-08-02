@@ -1111,7 +1111,7 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 699px) {
     .quote-section {
         background: linear-gradient(rgba(200, 200, 200, 0.8), rgba(200, 200, 200, 0.8)), 
                     url('https://i.imgur.com/OW2tkjz.jpeg') no-repeat 65% center/cover;
@@ -1240,7 +1240,7 @@ html {
 
 
 /* Tablet (768px) adjustments */
-@media (max-width: 768px) {
+@media (max-width: 699px) {
 
 
 
