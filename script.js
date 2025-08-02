@@ -306,18 +306,20 @@ document.querySelectorAll('nav a').forEach(anchor => {
 // Chrome-compatible click handler
 document.querySelectorAll('nav a:not(.estimate-btn)').forEach(link => {
     link.addEventListener('click', function(e) {
-        // Prevent Edge double-trigger bug
-        e.stopImmediatePropagation();
+        // Cancel any existing animation first
+        this.classList.remove('clicked');
         
-        // Force reflow for Chrome animation
+        // Force DOM repaint (Chrome needs this)
         void this.offsetWidth;
         
-        // Trigger animation
+        // Start new animation
         this.classList.add('clicked');
         
-        // Cleanup after animation
+        // Auto-cleanup
         setTimeout(() => {
             this.classList.remove('clicked');
+            // Reset styles forcefully for Chrome
+            this.style.setProperty('--after-width', '0', 'important');
         }, 1000);
         
         // Mobile menu handling
