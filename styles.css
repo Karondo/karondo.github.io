@@ -1535,3 +1535,162 @@ nav ul li a:focus {
     background: #1a1a1a;
   }
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Tablet-Specific Adjustments (993px - 1096px) */
+@media (min-width: 993px) and (max-width: 1096px) {
+    /* Header Adjustments */
+    .header-container {
+        padding: 15px 0;
+    }
+    
+    .logo {
+        font-size: 1.6rem;
+    }
+    
+    nav ul li {
+        margin-left: 15px;
+    }
+    
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+    
+    /* Quote Section Adjustments */
+    .booking-container {
+        max-width: 900px;
+    }
+    
+    .intro-title {
+        font-size: 1.9rem;
+    }
+    
+    .intro-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .intro-text {
+        font-size: 0.95rem;
+    }
+    
+    .trust-title {
+        font-size: 1.2rem;
+    }
+    
+    .trust-feature {
+        font-size: 0.85rem;
+    }
+    
+    /* Form Adjustments */
+    .form-container {
+        padding: 25px;
+    }
+    
+    .form-title {
+        font-size: 1.7rem;
+    }
+    
+    .progress-step {
+        width: 32px;
+        height: 32px;
+    }
+    
+    /* Services Grid Adjustments */
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    
+    /* Testimonial Adjustments */
+    .testimonial {
+        padding: 35px;
+    }
+    
+    /* About Section Adjustments */
+    .about-content {
+        gap: 40px;
+    }
+    
+    /* Footer Adjustments */
+    .footer-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+/* Additional tweaks for landscape tablets */
+@media (min-width: 993px) and (max-width: 1096px) and (orientation: landscape) {
+    .header-container {
+        padding: 12px 0;
+    }
+    
+    nav ul li {
+        margin-left: 12px;
+    }
+    
+    .quote-section {
+        padding: 90px 0 50px;
+    }
+    
+    .booking-container {
+        flex-direction: row;
+    }
+    
+    .intro-content {
+        padding: 25px;
+    }
+    
+    .form-container {
+        padding: 20px;
+    }
+}
+
+
+
+/* Grey overlay for quote section */
+.quote-section {
+    background: linear-gradient(rgba(200, 200, 200, 0.7), rgba(200, 200, 200, 0.7)), 
+                url('https://i.imgur.com/OW2tkjz.jpeg') no-repeat center center/cover;
+}
+
+/* Philadelphia Skyline Decoration */
+.philly-skyline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to top, rgba(0,45,114,0.8) 0%, transparent 100%);
+    z-index: 10;
+}
+
+/* Tablet (768px) adjustments */
+@media (max-width: 768px) {
+    .quote-section {
+        background: linear-gradient(rgba(200, 200, 200, 0.8), rgba(200, 200, 200, 0.8)), 
+                    url('https://i.imgur.com/OW2tkjz.jpeg') no-repeat 65% center/cover;
+    }
+    
+    .philly-skyline {
+        height: 30px;
+        background: linear-gradient(to top, rgba(0,45,114,0.6) 0%, transparent 100%);
+    }
+}
