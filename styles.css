@@ -155,7 +155,6 @@ nav ul li a {
 }
 
 /* Navigation Links - Underline ONLY on hover */
-/* Underline Animation */
 nav ul li a:not(.estimate-btn)::after {
     content: '';
     position: absolute;
@@ -166,8 +165,9 @@ nav ul li a:not(.estimate-btn)::after {
     background-color: var(--primary);
     transition: 
         width 0.3s ease,
-        opacity 0.7s ease 0.3s; /* Fade out after width completes */
+        opacity 0.7s ease;
     opacity: 0;
+    transform: translateZ(0); /* Chrome hardware acceleration fix */
 }
 
 /* Hover State */
@@ -179,11 +179,11 @@ nav ul li a:not(.estimate-btn):hover::after {
 
 /* Clicked State */
 nav ul li a:not(.estimate-btn).clicked::after {
-    width: 100%;
-    opacity: 1;
+    width: 100% !important; /* Force override in Chrome */
+    opacity: 1 !important;
     transition: 
         width 0.2s ease,
-        opacity 0s; /* No delay on click */
+        opacity 0.7s ease 0.3s !important;
 }
 
 /* Get Estimate Button */
