@@ -167,7 +167,7 @@ nav ul li a:hover {
 
 /* Quote Section - COMPACT VERSION */
 .quote-section {
-    min-height: 60vh;
+    min-height: 100vh; /* 60 */
     background: url('https://i.imgur.com/OW2tkjz.jpeg') no-repeat center center/cover;
     display: flex;
     align-items: center;
