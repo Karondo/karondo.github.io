@@ -300,3 +300,22 @@ document.querySelectorAll('nav a').forEach(anchor => {
         }
     });
 });
+
+
+// Click animation for nav links
+document.querySelectorAll('nav a:not(.estimate-btn)').forEach(link => {
+    link.addEventListener('click', function(e) {
+        // Trigger animation
+        this.classList.add('clicked');
+        
+        // Remove class after animation completes
+        setTimeout(() => {
+            this.classList.remove('clicked');
+        }, 1000); // Matches CSS animation duration
+        
+        // Close mobile menu if open
+        if (window.innerWidth <= 992) {
+            document.getElementById('mainNav').classList.remove('active');
+        }
+    });
+});
