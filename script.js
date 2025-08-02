@@ -302,18 +302,25 @@ document.querySelectorAll('nav a').forEach(anchor => {
 });
 
 
-// Click animation for nav links
+
+// Chrome-compatible click handler
 document.querySelectorAll('nav a:not(.estimate-btn)').forEach(link => {
     link.addEventListener('click', function(e) {
+        // Prevent Edge double-trigger bug
+        e.stopImmediatePropagation();
+        
+        // Force reflow for Chrome animation
+        void this.offsetWidth;
+        
         // Trigger animation
         this.classList.add('clicked');
         
-        // Remove class after animation completes
+        // Cleanup after animation
         setTimeout(() => {
             this.classList.remove('clicked');
-        }, 1000); // Matches CSS animation duration
+        }, 1000);
         
-        // Close mobile menu if open
+        // Mobile menu handling
         if (window.innerWidth <= 992) {
             document.getElementById('mainNav').classList.remove('active');
         }
