@@ -275,3 +275,29 @@ faqItems.forEach(item => {
         item.classList.toggle('active');
     });
 });
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#quote') {
+            // Special handling for estimate button to scroll to form
+            document.querySelector(targetId).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        } else {
+            // Regular smooth scroll for other links
+            document.querySelector(targetId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        // Close mobile menu if open
+        if (window.innerWidth <= 992) {
+            mainNav.classList.remove('active');
+        }
+    });
+});
