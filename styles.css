@@ -154,6 +154,7 @@ nav ul li a {
     transition: all 0.3s ease;
 }
 
+/* Navigation Links - Underline ONLY on hover */
 nav ul li a:not(.estimate-btn)::after {
     content: '';
     position: absolute;
@@ -162,11 +163,11 @@ nav ul li a:not(.estimate-btn)::after {
     bottom: 0;
     left: 0;
     background-color: var(--primary);
-    transition: width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition: width 0.3s ease;
 }
 
 nav ul li a:not(.estimate-btn):hover::after {
-    width: 100%;
+    width: 100%; /* Expand underline on hover */
 }
 
 /* Get Estimate Button */
