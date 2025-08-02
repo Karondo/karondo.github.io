@@ -303,7 +303,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
 
 
 
-// Chrome-compatible click handler
+// Chrome-compatible click handler (uwu)
 document.querySelectorAll('nav a:not(.estimate-btn)').forEach(link => {
     link.addEventListener('click', function(e) {
         // Cancel any existing animation first
