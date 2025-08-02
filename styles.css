@@ -1,3 +1,4 @@
+
 :root {
     --primary: #002d72;
     --primary-light: #3a7cb8;
@@ -135,25 +136,53 @@ header {
     color: var(--secondary);
 }
 
+/* Simplified Navigation */
 nav ul {
     display: flex;
+    align-items: center;
+    gap: 30px;
     list-style: none;
 }
 
-nav ul li {
-    margin-left: 20px;
-}
-
 nav ul li a {
-    text-decoration: none;
-    color: var(--dark);
+    font-size: 1.1rem;
     font-weight: 600;
-    transition: color 0.3s;
-    font-size: 0.95rem;
+    color: var(--dark);
+    text-decoration: none;
+    position: relative;
+    padding: 8px 0;
+    transition: all 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: var(--primary);
+nav ul li a:not(.estimate-btn)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+nav ul li a:not(.estimate-btn):hover::after {
+    width: 100%;
+}
+
+/* Get Estimate Button */
+.estimate-btn {
+    background: var(--primary);
+    color: white !important;
+    padding: 12px 25px !important;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    box-shadow: 0 4px 15px rgba(0, 45, 114, 0.2);
+}
+
+.estimate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 45, 114, 0.3);
+    background: #001a49;
 }
 
 .mobile-menu-btn {
@@ -165,9 +194,9 @@ nav ul li a:hover {
     color: var(--primary);
 }
 
-/* Quote Section - COMPACT VERSION */
+/* Quote Section */
 .quote-section {
-    min-height: 88vh; /* 60 */
+    min-height: 88vh;
     background: url('https://i.imgur.com/OW2tkjz.jpeg') no-repeat center center/cover;
     display: flex;
     align-items: center;
@@ -917,6 +946,8 @@ footer {
     font-size: 0.9rem;
 }
 
+
+
 /* Responsive Styles */
 @media (max-width: 1200px) {
     .section-title {
@@ -956,9 +987,8 @@ footer {
     .map-container {
         height: 400px;
     }
-}
-
-@media (max-width: 768px) {
+    
+    /* Header adjustments for mobile */
     .header-container {
         padding: 15px 0;
     }
@@ -982,68 +1012,26 @@ footer {
     nav ul {
         flex-direction: column;
         padding: 30px;
+        gap: 20px;
     }
     
     nav ul li {
-        margin: 15px 0;
+        margin: 0;
+    }
+    
+    nav ul li a {
+        font-size: 1.2rem;
+        padding: 12px 0;
+    }
+    
+    .estimate-btn {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
     }
     
     .mobile-menu-btn {
         display: block;
-    }
-    
-    .section-title {
-        font-size: 1.8rem;
-        margin-bottom: 40px;
-    }
-    
-    .section-title:after {
-        width: 60px;
-        height: 3px;
-        margin: 10px auto;
-    }
-    
-    .trust-features {
-        grid-template-columns: 1fr;
-    }
-    
-    .booking-container {
-        flex-direction: column;
-    }
-    
-    .step {
-        min-width: 100%;
-        margin-bottom: 20px;
-        padding: 20px;
-    }
-    
-    .step-number {
-        width: 50px;
-        height: 50px;
-        font-size: 1.3rem;
-    }
-    
-    .form-container {
-        padding: 25px;
-    }
-    
-    .form-title {
-        font-size: 1.5rem;
-    }
-    
-    .progress-step {
-        width: 30px;
-        height: 30px;
-        font-size: 0.9rem;
-    }
-    
-    .step-navigation .btn {
-        padding: 10px 15px;
-        font-size: 0.9rem;
-    }
-    
-    .map-container {
-        height: 350px;
     }
     
     /* Quote Section Mobile Adjustments */
@@ -1103,6 +1091,13 @@ footer {
     
     .testimonial {
         padding: 30px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .quote-section {
+        background: linear-gradient(rgba(200, 200, 200, 0.8), rgba(200, 200, 200, 0.8)), 
+                    url('https://i.imgur.com/OW2tkjz.jpeg') no-repeat 65% center/cover;
     }
 }
 
@@ -1221,448 +1216,10 @@ footer {
     }
 }
 
-
-
-
-
-/* ===== HEADER & NAVIGATION ===== */
-/* Base Styles */
-header {
-  background: white;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
 }
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 90%;
-}
-
-/* Logo Styles */
-.logo {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: #002d72;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  transition: transform 0.3s ease;
-  z-index: 1001;
-}
-
-.logo:hover {
-  transform: scale(1.03);
-}
-
-.logo span {
-  color: #ffd100;
-  margin-left: 0.2rem;
-}
-
-.logo i {
-  margin-right: 0.75rem;
-  color: #ffd100;
-  font-size: 1.5rem;
-  transition: transform 0.3s ease;
-}
-
-.logo:hover i {
-  transform: rotate(15deg);
-}
-
-/* Main Navigation */
-nav {
-  transition: all 0.5s ease-in-out;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  align-items: center;
-}
-
-nav ul li {
-  margin-left: 1.75rem;
-  position: relative;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  padding: 0.5rem 0;
-  position: relative;
-}
-
-nav ul li a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #002d72;
-  transition: width 0.3s ease;
-}
-
-nav ul li a:hover::after,
-nav ul li a:focus::after {
-  width: 100%;
-}
-
-nav ul li a:hover {
-  color: #002d72;
-}
-
-/* Active Link */
-nav ul li a.active {
-  color: #002d72;
-  font-weight: 700;
-}
-
-nav ul li a.active::after {
-  width: 100%;
-}
-
-/* Mobile Menu Button */
-.mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.75rem;
-  cursor: pointer;
-  color: #002d72;
-  z-index: 1001;
-  transition: all 0.3s ease;
-  padding: 0.5rem;
-}
-
-.mobile-menu-btn:hover {
-  transform: scale(1.1);
-}
-
-.mobile-menu-btn:focus {
-  outline: 2px solid #002d72;
-  outline-offset: 3px;
-}
-
-/* Mobile Navigation Styles */
-@media (max-width: 992px) {
-  .header-container {
-    padding: 0.8rem 0;
-  }
-
-  .mobile-menu-btn {
-    display: block;
-  }
-
-  nav {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 85%;
-    height: 100vh;
-    background: white;
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    overflow-y: auto;
-  }
-
-  nav.active {
-    left: 0;
-    animation: slideIn 0.4s ease-out forwards;
-  }
-
-  @keyframes slideIn {
-    from {
-      left: -100%;
-      opacity: 0;
-    }
-    to {
-      left: 0;
-      opacity: 1;
-    }
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 5rem 2rem 2rem;
-    height: 100%;
-  }
-
-  nav ul li {
-    margin: 0 0 1.5rem 0;
-    width: 100%;
-  }
-
-  nav ul li a {
-    font-size: 1.1rem;
-    padding: 0.75rem 0;
-    display: block;
-    width: 100%;
-  }
-
-  nav ul li a::after {
-    height: 3px;
-  }
-
-  /* Overlay when menu is open */
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-  }
-
-  .overlay.active {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-/* Small Mobile Devices */
-@media (max-width: 480px) {
-  .logo {
-    font-size: 1.5rem;
-  }
-
-  .logo i {
-    font-size: 1.3rem;
-    margin-right: 0.5rem;
-  }
-
-  .mobile-menu-btn {
-    font-size: 1.5rem;
-    padding: 0.4rem;
-  }
-
-  nav {
-    width: 80%;
-  }
-
-  nav ul {
-    padding: 4.5rem 1.5rem 1.5rem;
-  }
-
-  nav ul li {
-    margin-bottom: 1.2rem;
-  }
-
-  nav ul li a {
-    font-size: 1rem;
-  }
-}
-
-/* Extra Small Devices */
-@media (max-width: 360px) {
-  .logo {
-    font-size: 1.4rem;
-  }
-
-  nav ul {
-    padding: 4rem 1.25rem 1.25rem;
-  }
-}
-
-/* Header Scroll Effects */
-.header-scrolled {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem 0;
-}
-
-/* Accessibility Improvements */
-nav ul li a:focus {
-  outline: 2px solid #002d72;
-  outline-offset: 5px;
-  border-radius: 3px;
-}
-
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  header {
-    background: #1a1a1a;
-  }
-
-  .logo {
-    color: #ffffff;
-  }
-
-  nav ul li a {
-    color: #e0e0e0;
-  }
-
-  nav ul li a:hover {
-    color: #ffffff;
-  }
-
-  nav ul li a::after {
-    background-color: #ffd100;
-  }
-
-  .mobile-menu-btn {
-    color: #ffffff;
-  }
-
-  nav {
-    background: #1a1a1a;
-  }
-} 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Tablet-Specific Adjustments (993px - 1096px) */
-@media (min-width: 993px) and (max-width: 1096px) {
-    /* Header Adjustments */
-    .header-container {
-        padding: 15px 0;
-    }
-    
-    .logo {
-        font-size: 1.6rem;
-    }
-    
-    nav ul li {
-        margin-left: 15px;
-    }
-    
-    nav ul li a {
-        font-size: 0.9rem;
-    }
-    
-    /* Quote Section Adjustments */
-    .booking-container {
-        max-width: 900px;
-    }
-    
-    .intro-title {
-        font-size: 1.9rem;
-    }
-    
-    .intro-subtitle {
-        font-size: 1.1rem;
-    }
-    
-    .intro-text {
-        font-size: 0.95rem;
-    }
-    
-    .trust-title {
-        font-size: 1.2rem;
-    }
-    
-    .trust-feature {
-        font-size: 0.85rem;
-    }
-    
-    /* Form Adjustments */
-    .form-container {
-        padding: 25px;
-    }
-    
-    .form-title {
-        font-size: 1.7rem;
-    }
-    
-    .progress-step {
-        width: 32px;
-        height: 32px;
-    }
-    
-    /* Services Grid Adjustments */
-    .services-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
-    }
-    
-    /* Testimonial Adjustments */
-    .testimonial {
-        padding: 35px;
-    }
-    
-    /* About Section Adjustments */
-    .about-content {
-        gap: 40px;
-    }
-    
-    /* Footer Adjustments */
-    .footer-grid {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-}
-
-/* Additional tweaks for landscape tablets */
-@media (min-width: 993px) and (max-width: 1096px) and (orientation: landscape) {
-    .header-container {
-        padding: 12px 0;
-    }
-    
-    nav ul li {
-        margin-left: 12px;
-    }
-    
-    .quote-section {
-        padding: 90px 0 50px;
-    }
-    
-    .booking-container {
-        flex-direction: row;
-    }
-    
-    .intro-content {
-        padding: 25px;
-    }
-    
-    .form-container {
-        padding: 20px;
-    }
-}
-
 
 
 /* Tablet (768px) adjustments */
@@ -1691,130 +1248,6 @@ nav ul li a:focus {
     .philly-skyline {
         height: 30px;
         background: linear-gradient(to top, rgba(0,45,114,0.6) 0%, transparent 100%);
-    }
-}
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Header Navigation Specific Styles */
-nav ul {
-    display: flex;
-    align-items: center;
-    gap: 30px; /* Increased gap for better spacing */
-}
-
-nav ul li a {
-    font-size: 1.1rem; /* Larger font size */
-    font-weight: 600;
-    color: var(--dark);
-    text-decoration: none;
-    position: relative;
-    padding: 8px 0;
-    transition: all 0.3s ease;
-}
-
-nav ul li a:not(.estimate-btn)::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--primary);
-    transition: width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-nav ul li a:not(.estimate-btn):hover::after {
-    width: 100%;
-}
-
-/* Get Estimate Button Styles */
-.estimate-btn {
-    background: var(--primary);
-    color: white !important;
-    padding: 12px 25px !important;
-    border-radius: 50px;
-    transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
-    box-shadow: 0 4px 15px rgba(0, 45, 114, 0.2);
-}
-
-.estimate-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 45, 114, 0.3);
-    background: #001a49;
-}
-
-/* Mobile Menu Adjustments */
-@media (max-width: 992px) {
-    nav ul {
-        flex-direction: column;
-        gap: 20px;
-        align-items: flex-start;
-    }
-    
-    nav ul li a {
-        font-size: 1.2rem;
-        padding: 12px 0;
-    }
-    
-    .estimate-btn {
-        margin-top: 10px;
-        width: 100%;
-        text-align: center;
-    }
-}
-
-/* Smooth scroll behavior */
-html {
-    scroll-behavior: smooth;
-}
-
-
-
-
-/* Add this to your CSS */
-nav ul {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    list-style: none;
-    /* Center the navigation items vertically with adjustments */
-    transform: translateY(10%); /* Start with baseline adjustment */
-}
-
-nav ul li:nth-child(1) a { /* About Us link */
-    transform: translateY(-20%); /* Move up 20% */
-}
-
-nav ul li:nth-child(3) a { /* Get Your Estimate button */
-    transform: translateY(10%); /* Move down 10% */
-}
-
-/* For mobile view */
-@media (max-width: 992px) {
-    nav ul {
-        transform: none;
-    }
-    
-    nav ul li:nth-child(1) a,
-    nav ul li:nth-child(3) a {
-        transform: none;
     }
 }
  
