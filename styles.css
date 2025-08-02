@@ -1665,11 +1665,10 @@ nav ul li a:focus {
 
 
 
-/* Grey overlay for quote section */
-.quote-section {
-    background: linear-gradient(rgba(200, 200, 200, 0.7), rgba(200, 200, 200, 0.7)), 
-                url('https://i.imgur.com/OW2tkjz.jpeg') no-repeat center center/cover;
-}
+/* Tablet (768px) adjustments */
+@media (max-width: 768px) {
+
+
 
 /* Philadelphia Skyline Decoration */
 .philly-skyline {
@@ -1682,8 +1681,8 @@ nav ul li a:focus {
     z-index: 10;
 }
 
-/* Tablet (768px) adjustments */
-@media (max-width: 768px) {
+
+    
     .quote-section {
         background: linear-gradient(rgba(200, 200, 200, 0.8), rgba(200, 200, 200, 0.8)), 
                     url('https://i.imgur.com/OW2tkjz.jpeg') no-repeat 65% center/cover;
