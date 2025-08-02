@@ -1694,3 +1694,126 @@ nav ul li a:focus {
     }
 }
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Header Navigation Specific Styles */
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Increased gap for better spacing */
+}
+
+nav ul li a {
+    font-size: 1.1rem; /* Larger font size */
+    font-weight: 600;
+    color: var(--dark);
+    text-decoration: none;
+    position: relative;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:not(.estimate-btn)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+nav ul li a:not(.estimate-btn):hover::after {
+    width: 100%;
+}
+
+/* Get Estimate Button Styles */
+.estimate-btn {
+    background: var(--primary);
+    color: white !important;
+    padding: 12px 25px !important;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    box-shadow: 0 4px 15px rgba(0, 45, 114, 0.2);
+}
+
+.estimate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 45, 114, 0.3);
+    background: #001a49;
+}
+
+/* Mobile Menu Adjustments */
+@media (max-width: 992px) {
+    nav ul {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    
+    nav ul li a {
+        font-size: 1.2rem;
+        padding: 12px 0;
+    }
+    
+    .estimate-btn {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+
+/* Add this to your CSS */
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    /* Center the navigation items vertically with adjustments */
+    transform: translateY(10%); /* Start with baseline adjustment */
+}
+
+nav ul li:nth-child(1) a { /* About Us link */
+    transform: translateY(-20%); /* Move up 20% */
+}
+
+nav ul li:nth-child(3) a { /* Get Your Estimate button */
+    transform: translateY(10%); /* Move down 10% */
+}
+
+/* For mobile view */
+@media (max-width: 992px) {
+    nav ul {
+        transform: none;
+    }
+    
+    nav ul li:nth-child(1) a,
+    nav ul li:nth-child(3) a {
+        transform: none;
+    }
+}
