@@ -1264,3 +1264,11 @@ html {
 #services {
     scroll-margin-top: 3vh; 
 }  
+
+
+
+@media (min-width: 700px) and (max-width: 992px) {
+    .intro-content,
+    .form-container {
+        border-radius: 0 !important; /* Force sharp corners */
+    }
