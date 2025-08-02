@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Star Cleaning Services | Philadelphia</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">All Star<span>Cleaning</span></a>
+            <a href="#" class="logo"><i class="fas fa-star"></i>All Star<span>Cleaning</span></a>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
@@ -23,29 +23,166 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#map">Service Zone</a></li>
                     <li><a href="#testimonials">Reviews</a></li>
-                    <li><a href="#booking">Book Now</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#faq">FAQ</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Quote Section -->
+    <!-- Quote Section - Compact Version -->
     <section class="quote-section" id="quote">
         <div class="container">
-            <div class="quote-content">
-                <h1>Free Quote</h1>
-                <p>Enter your Zip Code for a free estimate.</p>
-                <div class="quote-form">
-                    <form id="quoteForm">
-                        <div class="form-group">
-                            <label for="zip">Your Zip Code</label>
-                            <input type="text" id="zip" name="zip" placeholder="Enter your zip code" required>
+            <div class="booking-container">
+                <div class="intro-content">
+                    <h1 class="intro-title">Philadelphia's Top Carpet Cleaning</h1>
+                    <p class="intro-subtitle">Restore your carpets to like-new condition</p>
+                    <p class="intro-text">Serving Philadelphia since 2010, All Star Cleaning provides professional carpet cleaning services using eco-friendly products and state-of-the-art equipment.</p>
+                    
+                    <div class="trust-section">
+                        <h3 class="trust-title"><i class="fas fa-shield-alt"></i> Carpet Cleaning You Can Trust</h3>
+                        <div class="trust-features">
+                            <div class="trust-feature"><i class="fas fa-check-circle"></i> Experienced Technicians</div>
+                            <div class="trust-feature"><i class="fas fa-check-circle"></i> Eco-Friendly Products</div>
+                            <div class="trust-feature"><i class="fas fa-check-circle"></i> Satisfaction Guarantee</div>
+                            <div class="trust-feature"><i class="fas fa-check-circle"></i> Affordable Pricing</div>
                         </div>
-                        <button type="submit" class="btn form-submit">Get Free Estimate</button>
-                    </form>
+                    </div>
+                    
+                    <div class="trust-tags">
+                        <div class="trust-tag">Philadelphia owned & operated</div>
+                        <div class="trust-tag">24/7 customer support</div>
+                        <div class="trust-tag">Free stain removal assessment</div>
+                    </div>
                 </div>
-                <div class="high-quality-tag">
-                    <h2>High Quality Affordable</h2>
+                
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2 class="form-title">Free Quote</h2>
+                        <p class="form-subtitle">Enter your details for a free estimate</p>
+                    </div>
+                    
+                    <!-- Progress Bar -->
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                        <div class="progress-step active">1</div>
+                        <div class="progress-step">2</div>
+                        <div class="progress-step">3</div>
+                        <div class="progress-step">4</div>
+                    </div>
+                    
+                    <!-- Step 1: Service Selection -->
+                    <div class="form-step active" id="step1">
+                        <div class="form-group">
+                            <label for="zip">Your Zip Code <span class="required-indicator">*</span></label>
+                            <input type="text" id="zip" class="form-control" placeholder="Enter your zip code" required>
+                            <div class="error-message" id="zip-error">Please enter a valid zip code</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Select Service <span class="required-indicator">*</span></label>
+                            <select id="service" class="form-control" required>
+                                <option value="">Choose a service</option>
+                                <option value="carpet">Carpet Cleaning</option>
+                                <option value="upholstery">Upholstery Cleaning</option>
+                                <option value="car">Car Interior Cleaning</option>
+                                <option value="pet">Pet Stain & Odor Removal</option>
+                                <option value="rug">Rug Cleaning</option>
+                                <option value="other">Other Service</option>
+                            </select>
+                            <div class="error-message" id="service-error">Please select a service</div>
+                        </div>
+                        
+                        <button class="btn btn-accent" onclick="validateStep1()">Get Estimate <i class="fas fa-arrow-right"></i></button>
+                        <div class="time-estimate"><i class="fas fa-clock"></i> Enter details in under 2 minutes</div>
+                    </div>
+                    
+                    <!-- Step 2: Detailed Description -->
+                    <div class="form-step" id="step2">
+                        <div class="form-group">
+                            <label for="details">Tell us what you need here <span class="required-indicator">*</span></label>
+                            <textarea id="details" class="form-control" placeholder="Describe your cleaning needs, room sizes, specific stains, or any special requirements..." rows="3" required></textarea>
+                            <div class="error-message" id="details-error">Please describe your cleaning needs</div>
+                        </div>
+                        
+                        <div class="step-navigation">
+                            <button class="btn btn-outline" onclick="prevStep()"><i class="fas fa-arrow-left"></i> Back</button>
+                            <button class="btn" onclick="validateStep2()">Continue <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Address -->
+                    <div class="form-step" id="step3">
+                        <div class="form-group">
+                            <label for="street">Street Address <span class="required-indicator">*</span></label>
+                            <input type="text" id="street" class="form-control" placeholder="Enter your street address" required>
+                            <div class="error-message" id="street-error">Please enter your street address</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="address-grid">
+                                <div>
+                                    <label for="city">City <span class="required-indicator">*</span></label>
+                                    <input type="text" id="city" class="form-control" placeholder="City" required>
+                                    <div class="error-message" id="city-error">Please enter your city</div>
+                                </div>
+                                <div>
+                                    <label for="state">State <span class="required-indicator">*</span></label>
+                                    <input type="text" id="state" class="form-control" placeholder="State" required>
+                                    <div class="error-message" id="state-error">Please enter your state</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-navigation">
+                            <button class="btn btn-outline" onclick="prevStep()"><i class="fas fa-arrow-left"></i> Back</button>
+                            <button class="btn" onclick="validateStep3()">Continue <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4: Contact Info -->
+                    <div class="form-step" id="step4">
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required-indicator">*</span></label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                            <div class="error-message" id="name-error">Please enter your full name</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required-indicator">*</span></label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                            <div class="error-message" id="email-error">Please enter a valid email</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required-indicator">*</span></label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+                            <div class="error-message" id="phone-error">Please enter a valid phone number</div>
+                        </div>
+                        
+                        <div class="step-navigation">
+                            <button class="btn btn-outline" onclick="prevStep()"><i class="fas fa-arrow-left"></i> Back</button>
+                            <button class="btn" onclick="validateAndSubmit()">Get Your Estimate <i class="fas fa-check"></i></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 5: Success Message -->
+                    <div class="form-step" id="step5">
+                        <div class="success-message">
+                            <i class="fas fa-check-circle success-icon"></i>
+                            <h2 class="form-title">Success!</h2>
+                            <p class="form-subtitle">Your estimate request has been received</p>
+                            
+                            <div class="success-details">
+                                <p><strong>Estimate Request Received!</strong></p>
+                                <p>We've received your request for <span class="success-highlight" id="summary-service">Carpet Cleaning</span> in <span class="success-highlight" id="summary-zip">19020</span>. Our team will contact you shortly with your free estimate.</p>
+                                <p>You'll receive a confirmation email at <span class="success-highlight" id="summary-email">user@example.com</span> within the next 5 minutes.</p>
+                                <p><i class="fas fa-clock"></i> Our business hours are Monday-Saturday 8am-8pm. We'll respond within 1 business day.</p>
+                            </div>
+                            
+                            <button class="btn btn-success" onclick="resetForm()">Request Another Estimate</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -86,7 +223,7 @@
                     </div>
                     <h3>Carpet Cleaning</h3>
                     <p>Professional deep cleaning to remove stains, dirt, and allergens from your carpets.</p>
-                    <div class="service-price">From $49 per room</div>
+                    <div class="service-price">From $25 per room</div>
                     <a href="#quote" class="btn">Get Quote</a>
                 </div>
                 <div class="service-card">
@@ -164,9 +301,9 @@
             <h2 class="section-title">What Our Customers Say</h2>
             <div class="testimonials-slider">
                 <div class="testimonial active">
-                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah J." class="testimonial-img">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Sarah J." class="testimonial-img">
                     <p class="testimonial-text">"I had an old red wine stain that every other company said was permanent. All Star Cleaning got it out completely! My carpet looks brand new. Worth every penny."</p>
-                    <p class="testimonial-author">- Sarah J.</p>
+                    <p class="testimonial-author">- Sarah J., Rittenhouse Square</p>
                     <div class="testimonial-rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -176,9 +313,9 @@
                     </div>
                 </div>
                 <div class="testimonial">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="testimonial-img">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Michael T." class="testimonial-img">
                     <p class="testimonial-text">"As a landlord, I use All Star Cleaning between tenants. They always make the carpets look move-in ready, which helps me rent properties faster."</p>
-                    <p class="testimonial-author">- Michael T.</p>
+                    <p class="testimonial-author">- Michael T., Northern Liberties</p>
                     <div class="testimonial-rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -188,9 +325,9 @@
                     </div>
                 </div>
                 <div class="testimonial">
-                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Lisa R." class="testimonial-img">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Lisa R." class="testimonial-img">
                     <p class="testimonial-text">"Their pet odor treatment saved my living room after my new puppy had multiple accidents. No more smells and the carpet looks amazing!"</p>
-                    <p class="testimonial-author">- Lisa R.</p>
+                    <p class="testimonial-author">- Lisa R., Fishtown</p>
                     <div class="testimonial-rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -209,13 +346,13 @@
     </section>
 
     <!-- About Us Section -->
-    <section class="about-us">
+    <section class="about-us" id="about">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
                     <h2>About Us</h2>
-                    <p>At All Star Cleaning, we provide you with the best possible home cleaning services experience. Our technicians and partners can help you with a variety of projects.</p>
-                    <p>Ready to tackle your next home cleaning project? We can help. Find the help you need to get your cleaning done right with All Star Cleaning. We'll connect you with professionals in your area who specialize in carpet, upholstery, and other cleaning services.</p>
+                    <p>Founded in Philadelphia in 2010, All Star Cleaning has become the city's trusted name in carpet and upholstery cleaning. Our team of certified technicians brings years of experience and the latest cleaning technology to every job.</p>
+                    <p>We take pride in serving our local community with environmentally-friendly cleaning solutions that are safe for families and pets. Our Philadelphia roots mean we understand the unique challenges of maintaining beautiful carpets in a bustling city environment.</p>
                 </div>
                 <div class="why-us">
                     <h3>Why Choose Us?</h3>
@@ -225,6 +362,7 @@
                         <li>Residential and commercial projects</li>
                         <li>Eco-friendly cleaning solutions</li>
                         <li>100% satisfaction guarantee</li>
+                        <li>Philadelphia-based customer support</li>
                     </ul>
                     <p style="margin-top: 20px;">We partner with a variety of trusted professionals so we can always match you with the help you need for your cleaning project.</p>
                 </div>
@@ -233,7 +371,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq">
+    <section class="faq" id="faq">
         <div class="container">
             <h2 class="section-title">Frequently Asked Questions</h2>
             <div class="faq-container">
@@ -270,7 +408,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Absolutely! We provide cleaning services for offices, retail spaces, and other commercial properties. Contact us for a customized commercial quote.</p>
+                        <p>Absolutely! We provide cleaning services for offices, retail spaces, and other commercial properties throughout Philadelphia. Contact us for a customized commercial quote.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -307,7 +445,7 @@
                         <li><a href="#how-it-works">How It Works</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#map">Service Zone</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -351,4 +489,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
