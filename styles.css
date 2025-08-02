@@ -1288,3 +1288,51 @@ html {
     .form-container {
         border-radius: 0 !important; /* Force sharp corners */
     }   
+}
+
+
+
+
+@media (max-width: 699px) {
+  /* Flip order (form FIRST) and increase size */
+  .booking-container {
+    flex-direction: column-reverse;
+    gap: 30px; /* More spacing between sections */
+  }
+
+  /* FORM CONTAINER - Make it bigger and bolder */
+  .form-container {
+    width: 100%;
+    padding: 30px 25px;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 30px rgba(0, 45, 114, 0.2);
+    background: white;
+    border: 2px solid var(--primary); /* Accent border */
+    transform: scale(1.02); /* Slight "pop" effect */
+    margin-bottom: 0; /* Remove gap (handled by parent) */
+  }
+
+  /* INTRO CONTENT - Slightly reduce visual weight */
+  .intro-content {
+    width: 100%;
+    padding: 25px;
+    border-radius: 10px !important;
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparent */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Progress bar - Make thicker for mobile */
+  .progress-bar {
+    height: 6px !important;
+  }
+
+  /* Buttons - Larger tap targets */
+  .btn, .btn-accent {
+    padding: 16px 28px !important;
+    font-size: 1.1rem !important;
+  }
+}
+
+
+
+
