@@ -303,26 +303,18 @@ document.querySelectorAll('nav a').forEach(anchor => {
 
 
 
-// Chrome-compatible click handler (uwu)
+// Click animation for nav linkssss
 document.querySelectorAll('nav a:not(.estimate-btn)').forEach(link => {
     link.addEventListener('click', function(e) {
-        // Cancel any existing animation first
-        this.classList.remove('clicked');
-        
-        // Force DOM repaint (Chrome needs this)
-        void this.offsetWidth;
-        
-        // Start new animation
+        // Trigger animation
         this.classList.add('clicked');
         
-        // Auto-cleanup
+        // Remove class after animation completes
         setTimeout(() => {
             this.classList.remove('clicked');
-            // Reset styles forcefully for Chrome
-            this.style.setProperty('--after-width', '0', 'important');
-        }, 1000);
+        }, 1000); // Matches CSS animation duration
         
-        // Mobile menu handling
+        // Close mobile menu if open
         if (window.innerWidth <= 992) {
             document.getElementById('mainNav').classList.remove('active');
         }
