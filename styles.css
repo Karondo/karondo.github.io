@@ -1331,8 +1331,37 @@ html {
     padding: 16px 28px !important;
     font-size: 1.1rem !important;
   }
-}
 
+
+
+        .quote-section {
+    padding-bottom: 30px !important; /* Original: 60px */
+  }
+
+  /* Optional: If you want to tighten just the space BELOW the form */
+  .form-container {
+    margin-bottom: 0 !important; /* Remove any bottom margin */
+  }
+
+      /* Hide ALL trust elements on mobile */
+  .trust-section, 
+  .trust-tags {
+    display: none !important; /* Force hide without HTML changes */
+  }
+
+  /* Adjust spacing to compensate */
+  .intro-content {
+    padding-bottom: 10px; /* Tighten up after removal */
+  }
+
+  /* Make the form appear larger visually */
+  .form-container {
+    margin-top: 0; /* Remove default gap */
+    padding: 25px 20px;
+    box-shadow: 0 5px 20px rgba(0, 45, 114, 0.3); /* Stronger shadow */
+  }
+
+}
 
 
 
