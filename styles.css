@@ -1531,3 +1531,10 @@ top: 82px;
   } 
 }
 
+
+@media (min-width: 992px) {
+  #mainNav ul li a {
+    font-size: 1.14rem; /* Slightly larger (vs default 1rem) */
+    
+  }
+}
