@@ -1281,6 +1281,14 @@ html {
     scroll-margin-top: 3vh; 
 }  
 
+#map {
+    scroll-margin-top:6vh; 
+}
+
+#faq {
+    scroll-margin-top:7vh; 
+}
+
 /*  ha */
 
 @media (min-width: 700px) and (max-width: 992px) {
