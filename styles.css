@@ -1365,10 +1365,24 @@ html {
 
 
 
+.mobile-only {
+    display: none;
+}
+
 
 
 @media (max-width: 992px) {
-    /* Improved Mobile Menu Button - Clean Version */
+     .mobile-only {
+        display: list-item; /* Proper <li> display */
+    }
+    
+    /* Optional: Add mobile-specific styling */
+    .mobile-only a {
+        padding: 18px 25px !important; /* Match other mobile items */
+    }
+ 
+ 
+ /* Improved Mobile Menu Button - Clean Version */
     .mobile-menu-btn {
         display: flex;
         background: transparent !important;
@@ -1507,5 +1521,5 @@ html {
 top: 82px;
  height: 9999px !important;
   } 
-
+}
 
