@@ -1365,3 +1365,147 @@ html {
 
 
 
+
+
+@media (max-width: 992px) {
+    /* Improved Mobile Menu Button - Clean Version */
+    .mobile-menu-btn {
+        display: flex;
+        background: transparent !important;
+        border: none !important;
+        padding: 12px;
+        margin: 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-btn i {
+        font-size: 1.8rem;
+        color: var(--primary);
+        transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    /* Animation when menu is active */
+    .mobile-menu-btn.active i {
+        transform: rotate(90deg);
+    }
+
+    /* Enhanced Mobile Navigation */
+    #mainNav {
+        position: fixed;
+        top: 83px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 76.4px);
+        background: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+        z-index: 999;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    #mainNav.active {
+        left: 0;
+    }
+
+    #mainNav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 20px 0;
+        margin: 0;
+        gap: 0;
+    }
+
+    #mainNav ul li {
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid rgba(0, 45, 114, 0.05);
+    }
+
+    #mainNav ul li a {
+        display: block;
+        width: 100%;
+        padding: 18px 25px;
+        font-size: 1.2rem;
+        color: var(--primary);
+        transition: all 0.3s ease;
+        text-align: left;
+        position: relative;
+    }
+
+    #mainNav ul li a:not(.estimate-btn):hover {
+        background: rgba(0, 45, 114, 0.03);
+    }
+
+    #mainNav ul li a:not(.estimate-btn)::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 4px;
+        height: 100%;
+        background: var(--primary);
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.3s ease;
+    }
+
+    #mainNav ul li a:not(.estimate-btn):hover::after {
+        transform: scaleY(1);
+    }
+
+    /* CTA Button Styling */
+    #mainNav ul li a.estimate-btn {
+        margin: 25px;
+        width: calc(100% - 50px);
+        text-align: center;
+        padding: 16px;
+        border-radius: 8px;
+        font-size: 1.2rem;
+        box-shadow: 0 4px 15px rgba(0, 45, 114, 0.2);
+        border: 2px solid var(--primary);
+        background: var(--primary);
+        color: white;
+    }
+
+    #mainNav ul li a.estimate-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 45, 114, 0.3);
+        background: #001a49;
+    }
+
+    /* Menu Item Animations */
+    #mainNav.active ul li {
+        opacity: 0;
+        animation: fadeInUp 0.4s ease forwards;
+    }
+
+    #mainNav.active ul li:nth-child(1) { animation-delay: 0.1s; }
+    #mainNav.active ul li:nth-child(2) { animation-delay: 0.2s; }
+    #mainNav.active ul li:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+
+
+@media (max-width: 343px) {
+  #mainNav {
+top: 82px;
+ height: 9999px !important;
+  } 
+
+
