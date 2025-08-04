@@ -1393,7 +1393,7 @@ html {
     /* Enhanced Mobile Navigation */
     #mainNav {
         position: fixed;
-        top: 83px;
+        top: 82.5px;
         left: -100%;
         width: 80%;
         height: calc(100vh - 76.4px);
