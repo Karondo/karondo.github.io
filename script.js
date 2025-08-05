@@ -320,3 +320,137 @@ document.querySelectorAll('nav a:not(.estimate-btn)').forEach(link => {
         }
     });
 });
+
+
+
+
+const callBar = document.querySelector('.call-top-bar');
+const TOP_THRESHOLD = 5; // pixels from top (used to be 5)
+
+function checkPosition() {
+  if (window.scrollY <= TOP_THRESHOLD) {
+    callBar.classList.add('visible');
+  } else {
+    callBar.classList.remove('visible');
+  }
+}
+
+// Use IntersectionObserver for perfect top detection
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      callBar.classList.add('visible');
+    } else {
+      callBar.classList.remove('visible');
+    }
+  });
+}, {
+  root: null,
+  rootMargin: '0px',
+  threshold: 1.0
+});
+
+// Observe a small element at the very top of the page
+const topSentinel = document.createElement('div');
+topSentinel.style.position = 'absolute';
+topSentinel.style.top = '0';
+topSentinel.style.height = '1px';
+document.body.prepend(topSentinel);
+observer.observe(topSentinel);
+
+// Fallback for older browsers
+window.addEventListener('scroll', checkPosition);
+checkPosition(); // Initialize
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Remove any duplicate declarations first
+(() => {
+  const callBar = document.querySelector('.call-top-bar');
+  const TOP_THRESHOLD = 1;
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mainNav = document.getElementById('mainNav');
+  
+  let isMenuOpen = false;
+
+  function checkPosition() {
+    if (!isMenuOpen && window.scrollY <= TOP_THRESHOLD) {
+      callBar.classList.add('visible');
+    } else {
+      callBar.classList.remove('visible');
+    }
+  }
+
+  function handleMenuToggle() {
+    isMenuOpen = mainNav.classList.contains('active');
+    checkPosition();
+  }
+
+  // Menu observer
+  const menuObserver = new MutationObserver(handleMenuToggle);
+  menuObserver.observe(mainNav, { 
+    attributes: true, 
+    attributeFilter: ['class'] 
+  });
+
+  // Top detection
+  const observer = new IntersectionObserver((entries) => {
+    if (!isMenuOpen) {
+      entries.forEach(entry => {
+        entry.isIntersecting 
+          ? callBar.classList.add('visible') 
+          : callBar.classList.remove('visible');
+      });
+    }
+  }, { 
+    threshold: 1.0 
+  });
+
+  const topSentinel = document.createElement('div');
+  topSentinel.style.position = 'absolute';
+  topSentinel.style.top = '0';
+  topSentinel.style.height = '1px';
+  document.body.prepend(topSentinel);
+  observer.observe(topSentinel);
+
+  // Event listeners
+  window.addEventListener('scroll', checkPosition);
+  mobileMenuBtn.addEventListener('click', handleMenuToggle);
+  checkPosition();
+})();
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const floatingCTA = document.getElementById('floatingCallCTA');
+  const section1 = document.getElementById('quote'); // Your first section
+  
+  window.addEventListener('scroll', function() {
+    const section1Height = section1.offsetHeight;
+    const scrollPosition = window.scrollY;
+    
+    // Activate only when Section 1 is COMPLETELY out of view
+    if (scrollPosition > section1Height) {
+      floatingCTA.classList.add('active');
+    } else {
+      floatingCTA.classList.remove('active');
+    }
+  });
+});
