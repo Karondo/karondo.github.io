@@ -1301,7 +1301,7 @@ html {
 
 
 
-@media (max-width: 699px) {
+@media (max-width: 714px) {
   /* Flip order (form FIRST) and increase size */
   .booking-container {
     flex-direction: column-reverse;
@@ -1538,3 +1538,231 @@ top: 82px;
   }
 }
  
+
+
+
+
+
+
+
+
+
+/* Call Bar - Fixed at top */
+.call-top-bar {
+  background: #002d72;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+  height: 40px;
+  box-sizing: border-box;
+  transform: translateY(-100%);
+  transition: transform 0.2s ease-out;
+  border-bottom: 2px solid #ffd100;
+}
+
+.call-top-bar.visible {
+  transform: translateY(0);
+}
+
+.call-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.call-link i {
+  color: #ffd100;
+}
+
+/* Header - Pushed down when call bar is visible */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  transition: top 0.2s ease-out;
+}
+
+.call-top-bar.visible + header {
+  top: 40px; /* Matches call bar height */
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 992px) {
+  /* Force hide call bar when menu is open */
+  #mainNav.active ~ .call-top-bar {
+    display: none !important;
+  }
+  
+  /* Adjust header spacing when menu is open */
+  #mainNav.active + header {
+    top: 0 !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Professional Call Header - Refined */
+.pro-call-header {
+  margin: 0 auto 20px;
+  max-width: 100%;
+}
+
+.call-cta-container {
+  background: rgba(0,45,114,0.03);
+  border-radius: 8px;
+  padding: 15px;
+  border-left: 3px solid var(--secondary);
+}
+
+.call-prompt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.call-icon {
+  font-size: 1.1rem;
+  color: var(--primary);
+  background: rgba(255,209,0,0.15);
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.call-text {
+  flex: 1;
+}
+
+.call-action {
+  color: var(--gray);
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.pro-call-number {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: inline-block;
+} 
+
+.pro-call-number:hover {
+  color: var(--accent);
+}
+
+.form-alternative {
+   color: var(--gray); /* Darker for contrast */
+  font-weight: 600; /* Bold */
+  font-size: 0.9rem;
+  margin: 8px 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.form-alternative i {
+  color: var(--secondary);
+  font-size: 0.7rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Stealth Call CTA ===== */
+#floatingCallCTA {
+  /* Hide by default */
+  display: none;
+
+  /* Mobile & Tablet Only */
+  @media (max-width: 1023px) {
+    /* Positioning */
+    display: flex;
+    position: fixed;
+    bottom: -50px; /* Starts further hidden */
+    right: 10px;
+    z-index: 1000;
+    
+    /* Visual Design - Near-Invisible */
+    background: rgba(255, 255, 255, 0.88); /* More transparent */
+    backdrop-filter: blur(2px); /* Soft blending */
+    border-radius: 18px;
+    border: 0.3px solid rgba(0, 0, 0, 0.03); /* Ultra-thin */
+    box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.02);
+    padding: 5px 10px;
+    gap: 5px;
+    
+    /* Animation - Almost Undetectable */
+    transition: bottom 0.5s cubic-bezier(0.12, 0.85, 0.36, 1);
+  }
+
+  /* Phone-Specific Tweaks */
+  @media (max-width: 768px) {
+    right: 8px;
+    padding: 4px 8px;
+  }
+}
+
+/* Active State */
+#floatingCallCTA.active {
+  @media (max-width: 1023px) {
+    bottom: 10px; /* Closer to edge */
+  }
+}
+
+/* Content Styling */
+@media (max-width: 1023px) {
+  #floatingCallCTA .call-icon {
+    font-size: 0.9rem;
+    color: #888; /* Lighter gray */
+  }
+  #floatingCallCTA .call-number {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.82rem;
+    color: #555;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+  }
+  #floatingCallCTA:active {
+    background: rgba(255, 255, 255, 0.82); /* Subtler press */
+  }
+}
