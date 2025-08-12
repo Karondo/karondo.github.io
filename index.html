@@ -192,26 +192,25 @@
                     </div>
                     
                     <!-- Step 5: Success Message -->
-                    <div class="form-step" id="step5">
-                        <div class="success-message">
-                            <i class="fas fa-check-circle success-icon"></i>
-                            <h2 class="form-title">Success!</h2>
-                            <p class="form-subtitle">Your estimate request has been received</p>
-                            
-                            <div class="success-details">
-                                <p><strong>Estimate Request Received!</strong></p>
-                                <p>We've received your request for <span class="success-highlight" id="summary-service">Carpet Cleaning</span> in <span class="success-highlight" id="summary-zip">19020</span>. Our team will contact you shortly with your free estimate.</p>
-                                <p>You'll receive a confirmation email at <span class="success-highlight" id="summary-email">user@example.com</span> within the next 5 minutes.</p>
-                                <p><i class="fas fa-clock"></i> Our business hours are Monday-Saturday 8am-8pm. We'll respond within 1 business day.</p>
-                            </div>
-                            
-                            <button class="btn btn-success" onclick="resetForm()">Request Another Estimate</button>
-                        </div>
-                    </div>
+    <div class="form-step" id="step5">
+        <div class="success-message">
+            <i class="fas fa-check-circle success-icon"></i>
+            <h2 class="form-title">Request Received!</h2>
+            <p class="form-subtitle">We'll contact you shortly with your estimate</p>
+            
+            <div class="success-details">
+                <div class="contact-method">
+                    <h4><i class="fas fa-phone-alt"></i> Phone Call First</h4>
+                    <p>Our team will call you at <strong class="clickable-phone">(267) 777-3717</strong> as soon as possible to confirm your estimate.</p>
+                </div>
+                
+                <div class="contact-note">
+                    <p><i class="fas fa-info-circle"></i> <strong>Note:</strong> If we can't reach you by phone, we'll follow up via email to schedule your service.</p>
                 </div>
             </div>
         </div>
-        <div class="philly-skyline"></div>
+    </div>
+      
     </section>
 
     <!-- How It Works Section -->
@@ -291,7 +290,7 @@
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-broom"></i>
-                    </div>
+                    </div> 
                     <h3>Other Services</h3>
                     <p>Tile & grout cleaning, mattress cleaning, and other specialized services.</p>
                     <div class="service-price">Custom pricing</div>
@@ -524,4 +523,4 @@
     
     <script src="script.js"></script>
 </body>
-</html>
+</html> 
