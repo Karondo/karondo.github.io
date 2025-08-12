@@ -180,7 +180,7 @@ function validateAndSubmit() {
         isValid = false;
     }
     
-    // Validate phone
+    // Validate phone (but don't show the user's number in success message)
     const phoneRegex = /^\d{10}$/;
     if (!phone.value || !phoneRegex.test(phone.value.replace(/\D/g, ''))) {
         document.getElementById('phone-error').style.display = 'block';
@@ -189,54 +189,20 @@ function validateAndSubmit() {
     }
     
     if (isValid) {
-        // Set success message details
-        const service = document.getElementById('service');
-        const serviceText = service.options[service.selectedIndex].text;
-        const zip = document.getElementById('zip').value;
-        
-        document.getElementById('summary-service').textContent = serviceText;
-        document.getElementById('summary-zip').textContent = zip;
-        document.getElementById('summary-email').textContent = email.value;
-        
-        // Show success step
+        // Show success step - no need to populate user details anymore
         showStep(4);
+        
+        // You can still submit the form data to your backend here
+        // submitFormData();
+        
+        // Optional: Auto-scroll to top of success message
+        document.getElementById('step5').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
 
-// Reset form to initial state
-function resetForm() {
-    // Clear all form fields
-    document.getElementById('zip').value = '';
-    document.getElementById('service').selectedIndex = 0;
-    document.getElementById('details').value = '';
-    document.getElementById('street').value = '';
-    document.getElementById('city').value = '';
-    document.getElementById('state').value = '';
-    document.getElementById('name').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('phone').value = '';
-    
-    // Reset error states
-    document.querySelectorAll('.error-message').forEach(el => {
-        el.style.display = 'none';
-    });
-    document.querySelectorAll('.form-control').forEach(el => {
-        el.classList.remove('error-highlight');
-    });
-    
-    // Reset progress bar
-    progressBar.style.width = '0%';
-    progressSteps.forEach((step, index) => {
-        step.classList.remove('active');
-        step.classList.remove('completed');
-        if (index === 0) {
-            step.classList.add('active');
-        }
-    });
-    
-    // Go back to first step
-    showStep(0);
-}
+// Remove the resetForm function completely since we don't need it anymore
+
+
 
 // Testimonial Slider
 const testimonials = document.querySelectorAll('.testimonial');
