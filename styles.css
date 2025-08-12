@@ -1868,3 +1868,48 @@ header {
     background: #f5f5f5; /* light grey */
  
 }
+
+
+
+
+
+
+@media (max-width: 869px) {
+  /* Step 5 - Subtle Padding Reduction */
+  #step5 {
+    padding-bottom: 15px !important; /* Reduced from original */
+  }
+
+  /* Success Icon & Title Spacing */
+  #step5 .success-icon {
+    margin-bottom: 0.5rem !important; /* Reduced from 1rem */
+  }
+
+  /* Contact Sections Spacing */
+  #step5 .contact-method {
+    margin-bottom: 1rem !important; /* Reduced from 1.5rem */
+  }
+
+  #step5 .contact-note {
+    margin-top: 1rem !important; /* Reduced from 1.5rem */
+    padding: 0.8rem 1rem !important; /* Slightly tighter */
+  }
+
+  /* Bottom Padding for Last Element */
+  #step5 .contact-note p {
+    margin-bottom: 0 !important;
+  }
+
+
+
+    /* Only targets Step 5 form bottom padding */
+#step5.form-step {
+  padding-bottom: 0px !important; /* Extreme reduction (was ~30-40px) */
+  margin-bottom: -40px !important; /* Pulls content up slightly */
+}
+
+/* Optional: Tighten success icon spacing if needed */
+#step5 .success-icon {
+  margin-bottom: 0.3rem !important; /* Reduced from 1rem */
+}
+}
