@@ -1300,7 +1300,7 @@ html {
 
 
 
-@media (max-width: 714px) {
+@media (max-width: 869px) {
   /* Flip order (form FIRST) and increase size */
   .booking-container {
     flex-direction: column-reverse;
