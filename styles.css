@@ -2074,16 +2074,53 @@ header {
 
 
 
-@media (max-width: 576px) {
-  /* Textarea expansion */
-  #step2 textarea {
-    min-height: 120px !important;  /* Original: ~90px */
-    padding: 14px !important;      /* More internal padding */
-    font-size: 1rem !important;    /* Slightly larger text */
-    line-height: 1.5 !important;   /* Better readability */
+
+
+
+
+
+
+
+#step2 textarea {
+    /* Horizontal Expansion */
+    width: calc(100% + 15px) !important;  /* Stretch beyond container */
+    margin-left: -7px !important;         /* Re-center the field */
+
+    /* Text Compression Magic */
+    font-size: 0.92rem !important;        /* Slightly smaller font */
+    word-spacing: -1px !important;        /* Tighten word gaps */
+    letter-spacing: -0.15px !important;   /* Subtle character crunch */
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif !important; /* More compact system font */
+
+    /* Structure */
+    min-height: 130px !important;
+    padding: 10px 12px !important;        /* Reduced padding */
+    line-height: 1.4 !important;          /* Tighter but readable */
   }
 
-   /* Precise 5% reduction */
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 576px) {
+
+  #step2 .step-navigation {
+    margin-top: 10px !important;  /* Original: 12px (moves up 2px) */
+    margin-bottom: -2px !important; /* Compensates layout shift */
+  }
+
+  /* Optional: Fine-tune button spacing */
+  #step2 .step-navigation .btn {
+    transform: translateY(-2px); /* Micro-adjustment */
+  }   
+/* Precise 5% reduction */
   .step-navigation .btn,
   .step-navigation .btn-outline {
     padding: 11.4px 22.8px !important;  /* Original: 12px 24px */
@@ -2096,3 +2133,6 @@ header {
     gap: 11.5px !important;  /* Original: 12px */
   }
 }
+
+
+
