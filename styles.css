@@ -1931,3 +1931,98 @@ header {
     }
 }
 
+
+
+
+
+
+
+
+@media (max-width: 699px) {
+  .pro-call-header {
+    margin-bottom: 15px; /* Slightly reduce spacing below container */
+  }
+  
+  .call-cta-container {
+    padding: 12px 10px; /* Slightly tighter padding */
+    border-left-width: 2px; /* Thinner accent border */
+  }
+  
+  .call-prompt {
+    gap: 8px; /* Reduced from 12px */
+    align-items: center; /* Ensure vertical alignment */
+  }
+  
+  .call-icon {
+    font-size: 1rem; /* Slightly smaller icon */
+    padding: 7px; /* Slightly smaller padding */
+  }
+  
+  .call-action {
+    font-size: 0.85rem; /* Smaller text */
+    margin-bottom: 2px; /* Tighter spacing */
+  }
+  
+  /* PHONE NUMBER STAYS EXACTLY THE SAME SIZE */
+  .pro-call-number {
+    /* No changes - remains big and bold */
+    font-size: 1.5rem !important; /* Force same size */
+  }
+  
+  .form-alternative {
+    font-size: 0.82rem; /* Slightly smaller */
+    margin-top: 6px; /* Reduced spacing */
+  }
+}
+
+/* Only minor tweaks below 400px */
+@media (max-width: 576px) {
+   .pro-call-number {
+    /* No changes - remains big and bold */
+    font-size: 1.4rem !important; /* Force same size */
+  }
+    
+    
+    .call-cta-container {
+    padding: 10px 8px; /* Slightly tighter */
+  }
+  
+  .call-action {
+    font-size: 0.8rem; /* Minimal reduction */
+  }
+  
+  .form-alternative {
+    font-size: 0.78rem; /* Very slight reduction */
+  }
+}
+
+
+
+@media (max-width: 500px) {
+   .pro-call-number {
+    /* No changes - remains big and bold */
+    font-size: 1.3rem !important; /* Force same size */
+  }
+}
+
+@media (max-width: 445px) {
+   .pro-call-number {
+    /* No changes - remains big and bold */
+    font-size: 1.25rem !important; /* Force same size */
+  }
+}
+@media (max-width: 393px) {
+   .pro-call-number {
+    /* No changes - remains big and bold */
+    font-size: 1.2rem !important; /* Force same size */
+  }
+}
+
+
+@media (max-width: 380px) {
+   .pro-call-number {
+    /* No changes - remains big and bold */
+    font-size: 1.15rem !important; /* Force same size */
+  }
+}
+
