@@ -2026,3 +2026,46 @@ header {
   }
 }
 
+
+
+
+
+
+
+.mobile-email-fallback {
+  display: none;
+}
+
+/* Reverse the 2x scaling at 576px */
+@media (max-width: 576px) {
+  .progress-step {
+    width: 35px !important; /* Original desktop size */
+    height: 35px !important;
+    font-size: 0.9rem !important;
+    border-width: 3px !important; /* Original border thickness */
+  }
+  
+  .progress-bar {
+    height: 4px !important; /* Original thickness */
+  }
+
+
+
+
+
+      #step5 .contact-note {
+    display: none !important;
+  }
+      #step5 .success-details {
+    padding-bottom: 1px !important;
+    margin-bottom: 14px !important;
+
+    }
+
+
+
+  .mobile-email-fallback {
+    display: inline;
+  }   
+}
+
