@@ -180,7 +180,7 @@ function validateAndSubmit() {
         isValid = false;
     }
     
-    // Validate phone (but don't show the user's number in success message)
+    // Validate phone
     const phoneRegex = /^\d{10}$/;
     if (!phone.value || !phoneRegex.test(phone.value.replace(/\D/g, ''))) {
         document.getElementById('phone-error').style.display = 'block';
@@ -189,14 +189,17 @@ function validateAndSubmit() {
     }
     
     if (isValid) {
-        // Show success step - no need to populate user details anymore
+        // Show success step
         showStep(4);
         
-        // You can still submit the form data to your backend here
-        // submitFormData();
+        // Scroll to the very top of the page smoothly
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
         
-        // Optional: Auto-scroll to top of success message
-        document.getElementById('step5').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Optional: You can still submit the form data to your backend here
+        // submitFormData();
     }
 }
 
