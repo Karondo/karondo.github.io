@@ -2069,3 +2069,30 @@ header {
   }   
 }
 
+
+
+
+
+
+@media (max-width: 576px) {
+  /* Textarea expansion */
+  #step2 textarea {
+    min-height: 120px !important;  /* Original: ~90px */
+    padding: 14px !important;      /* More internal padding */
+    font-size: 1rem !important;    /* Slightly larger text */
+    line-height: 1.5 !important;   /* Better readability */
+  }
+
+   /* Precise 5% reduction */
+  .step-navigation .btn,
+  .step-navigation .btn-outline {
+    padding: 11.4px 22.8px !important;  /* Original: 12px 24px */
+    font-size: 0.9rem !important;        /* Maintains original font size */
+    min-width: auto;                     /* Allows natural width */
+  }
+
+  /* Optional: Slight gap adjustment (4% reduction) */
+  .step-navigation {
+    gap: 11.5px !important;  /* Original: 12px */
+  }
+}
