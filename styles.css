@@ -2136,3 +2136,25 @@ header {
 
 
 
+
+@media (min-width: 577px) and (max-width: 869px) {
+  /* Targeted button reduction */
+  .step-navigation .btn,
+  .step-navigation .btn-outline {
+    padding: 10.5px 21px !important;  /* 12.5% smaller than desktop (12px 24px) */
+    font-size: 1.05rem !important;    /* Minimal font adjustment */
+
+      min-width: 90px;                  /* Prevents over-shrinking */
+  }
+
+  /* Slight gap reduction */
+  .step-navigation {
+    gap: 10px !important;             /* Original: 12px */
+  }
+}
+
+
+
+
+
+
