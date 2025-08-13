@@ -1905,7 +1905,7 @@ header {
     /* Only targets Step 5 form bottom padding */
 #step5.form-step {
   padding-bottom: 0px !important; /* Extreme reduction (was ~30-40px) */
-  margin-bottom: -40px !important; /* Pulls content up slightly */
+  margin-bottom: -47px !important; /* Pulls content up slightly */
 }
 
 /* Optional: Tighten success icon spacing if needed */
