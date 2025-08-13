@@ -2081,22 +2081,26 @@ header {
 
 
 
-#step2 textarea {
+  #step2 textarea {
     /* Horizontal Expansion */
-    width: calc(100% + 15px) !important;  /* Stretch beyond container */
-    margin-left: -7px !important;         /* Re-center the field */
+    width: calc(100% + 24px) !important;  /* Extra stretch for 50% more words */
+    margin-left: -12px !important;        /* Perfect re-centering */
 
-    /* Text Compression Magic */
-    font-size: 0.92rem !important;        /* Slightly smaller font */
-    word-spacing: -1px !important;        /* Tighten word gaps */
-    letter-spacing: -0.15px !important;   /* Subtle character crunch */
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif !important; /* More compact system font */
+    /* Font Matching - Uses your site's standard input font */
+    font-family: inherit !important;      /* Matches other inputs */
+    font-size: 0.9rem !important;         /* Slightly smaller than default */
+    font-weight: inherit !important;      /* Maintains weight consistency */
 
+    /* Precision Spacing Adjustments */
+    word-spacing: -1.4px !important;      /* Tighten word gaps */
+    letter-spacing: -0.25px !important;   /* Subtle character crunch */
+    
     /* Structure */
-    min-height: 130px !important;
-    padding: 10px 12px !important;        /* Reduced padding */
-    line-height: 1.4 !important;          /* Tighter but readable */
+    min-height: 140px !important;
+    padding: 12px 14px !important;
+    line-height: 1.35 !important;
   }
+
 
 
 
