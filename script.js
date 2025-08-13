@@ -173,11 +173,73 @@ function updateSuccessMessage() {
     }
 }
 
-// Modify the validateAndSubmit function to call updateSuccessMessage
-function validateAndSubmit() {
+
+
+
+// Track submission state
+let isSubmitting = false;
+
+// New function to send data to Cloudflare Worker with timeout handling
+async function sendFormDataToCloudflare(formData) {
+    try {
+        // Add timeout to the fetch request (5 seconds)
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+        const response = await fetch('https://spotlessrugsproxywork.spotlessrugs-services.workers.dev/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+            signal: controller.signal
+        });
+
+        clearTimeout(timeoutId);
+        
+        const result = await response.json();
+        
+        if (!result.success) {
+            console.error('Failed to send data:', result.error);
+            return false;
+        }
+        
+        return true;
+    } catch (error) {
+        console.error('Error sending data:', error);
+        return false;
+    } finally {
+        isSubmitting = false;
+    }
+}
+
+// Modified validateAndSubmit function to show success immediately
+async function validateAndSubmit() {
+    // If already submitting, ignore additional clicks
+    if (isSubmitting) {
+        return;
+    } 
+    
+    // Lock the form
+    isSubmitting = true;
+    
+    // Disable the submit button to prevent multiple clicks
+    const submitButton = document.querySelector('button[type="submit"]');
+    if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
+    }
+
     const name = document.getElementById('name');
     const email = document.getElementById('email');
     const phone = document.getElementById('phone');
+    const zip = document.getElementById('zip');
+    const service = document.getElementById('service');
+    const details = document.getElementById('details');
+    const street = document.getElementById('street');
+    const city = document.getElementById('city');
+    const state = document.getElementById('state');
+    
     let isValid = true;
     
     // Reset errors
@@ -212,10 +274,21 @@ function validateAndSubmit() {
     }
     
     if (isValid) {
-        // Update the success message with the user's phone number
-        updateSuccessMessage();
+        // Prepare form data
+        const formData = {
+            name: name.value,
+            email: email.value,
+            phone: phone.value,
+            zip: zip.value,
+            service: service.options[service.selectedIndex].text,
+            details: details.value,
+            street: street.value,
+            city: city.value,
+            state: state.value
+        };
         
-        // Show success step
+        // Immediately show success step without waiting for API response
+        updateSuccessMessage();
         showStep(4);
         
         // Scroll to the very top of the page smoothly
@@ -223,9 +296,40 @@ function validateAndSubmit() {
             top: 0,
             behavior: 'smooth'
         });
+        
+        // Send data to Cloudflare Worker in the background
+        try {
+            await sendFormDataToCloudflare(formData);
+        } catch (error) {
+            console.error('Background submission error:', error);
+            // Don't show error to user since we've already shown success
+        } finally {
+            // Re-enable the button after submission is complete
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Get Estimate';
+            }
+            isSubmitting = false;
+        }
+    } else {
+        // If validation failed, release the submission lock
+        isSubmitting = false;
+        if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Get Estimate';
+        }
     }
+      // Add event listener to the form to prevent multiple submissions
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            validateAndSubmit();
+        });
+    }
+});
 }
-// Remove the resetForm function completely since we don't need it anymore
 
 
 
