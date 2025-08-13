@@ -2159,6 +2159,14 @@ header {
 
 
 
-
+/* Backup CSS in case HTML gets regenerated */
+#step5 .clickable-phone {
+  color: #000066 !important;       /* Dark navy blue */
+  font-weight: 900 !important;     /* Ultra bold */
+  text-decoration: underline !important;
+  cursor: text !important;
+  background: transparent !important;
+  display: inline !important;
+}
 
 
