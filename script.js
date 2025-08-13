@@ -151,6 +151,32 @@ function validateStep3() {
     }
 }
 
+
+// Add this function to update the success message with the user's phone number
+function updateSuccessMessage() {
+    const phoneInput = document.getElementById('phone');
+    const successPhoneElement = document.querySelector('.clickable-phone');
+    
+    if (phoneInput && successPhoneElement) {
+        // Format the phone number for display (adds parentheses and hyphen)
+        const rawNumber = phoneInput.value.replace(/\D/g, '');
+        let formattedNumber = rawNumber;
+        
+        if (rawNumber.length === 10) {
+            formattedNumber = `(${rawNumber.substring(0, 3)}) ${rawNumber.substring(3, 6)}-${rawNumber.substring(6)}`;
+        }
+        
+        // Update the success message
+        successPhoneElement.textContent = formattedNumber;
+        
+        // Make the phone number clickable
+        successPhoneElement.addEventListener('click', function() {
+            window.location.href = `tel:${rawNumber}`;
+        });
+    }
+}
+
+// Modify the validateAndSubmit function to call updateSuccessMessage
 function validateAndSubmit() {
     const name = document.getElementById('name');
     const email = document.getElementById('email');
@@ -189,6 +215,9 @@ function validateAndSubmit() {
     }
     
     if (isValid) {
+        // Update the success message with the user's phone number
+        updateSuccessMessage();
+        
         // Show success step
         showStep(4);
         
@@ -197,12 +226,8 @@ function validateAndSubmit() {
             top: 0,
             behavior: 'smooth'
         });
-        
-        // Optional: You can still submit the form data to your backend here
-        // submitFormData();
     }
 }
-
 // Remove the resetForm function completely since we don't need it anymore
 
 
