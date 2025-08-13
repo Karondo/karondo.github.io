@@ -169,10 +169,7 @@ function updateSuccessMessage() {
         // Update the success message
         successPhoneElement.textContent = formattedNumber;
         
-        // Make the phone number clickable
-        successPhoneElement.addEventListener('click', function() {
-            window.location.href = `tel:${rawNumber}`;
-        });
+
     }
 }
 
