@@ -100,7 +100,7 @@ function validateStep2() {
     details.classList.remove('error-highlight');
     
     // Validate details
-    if (!details.value || details.value.trim().length < 10) {
+    if (!details.value || details.value.trim().length < 30) { // was 10
         document.getElementById('details-error').style.display = 'block';
         details.classList.add('error-highlight');
         isValid = false;
