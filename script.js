@@ -445,3 +445,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+
+
+
+
+
+document.querySelector('.call-top-bar a').href = 'tel:2677773717';
