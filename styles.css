@@ -1913,3 +1913,21 @@ header {
   margin-bottom: 0.3rem !important; /* Reduced from 1rem */
 }
 }
+
+
+
+
+
+
+
+@media (max-width: 576px) {
+    .step-navigation {
+        flex-direction: column-reverse; /* This will reverse the order */
+        gap: 10px;
+    }
+    
+    .step-navigation .btn {
+        width: 100%;
+    }
+}
+
