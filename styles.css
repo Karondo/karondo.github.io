@@ -2204,3 +2204,36 @@ header {
     display: block;
     animation: fadeIn 0.5s ease;
 }
+
+
+
+
+
+
+
+
+/* Option 2 (More Responsive) */
+.map-container { height: 500px; }
+
+@media (max-width: 992px) {
+  .map-container { height: 500px; } /* Tablet + large mobile */
+}
+
+
+@media (max-width: 767px) {
+  .map-container { height: 470px; } /* Tablet + large mobile */
+}
+
+@media (max-width: 576px) {
+  .map-container { height: 430px; } /* Tiny mobile */
+
+
+
+
+  .map-container {
+    width: 104%; /* Exactly 4% wider */
+    margin-left: -2%; /* Perfect centering adjustment */
+    margin-right: -2%; /* Perfect centering adjustment */
+  }
+
+}
