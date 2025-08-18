@@ -2182,7 +2182,7 @@ header {
 
 /* Adjust this single value to make testimonials wider */
 .testimonials-slider {
-    max-width: 950px; /* Changed from original 800px to 900px */
+    max-width: 1170px; /* used to be 950px */
     margin: 0 auto;
     position: relative;
 }
