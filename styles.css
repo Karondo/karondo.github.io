@@ -2235,5 +2235,44 @@ header {
     margin-left: -2%; /* Perfect centering adjustment */
     margin-right: -2%; /* Perfect centering adjustment */
   }
-
 }
+
+
+
+
+
+
+
+@media (max-width: 664px) {
+  .service-zones .zone-tag:nth-child(8) {  /* Targets Wilmington specifically */
+    display: none !important;
+  }
+}
+@media (max-width: 646px) {
+  .service-zones .zone-tag:nth-child(7) {  /* Trenton */
+    display: none !important;
+  }
+}
+
+
+
+@media (max-width: 509px) {
+ 
+
+
+      .service-zones .zone-tag:nth-child(6) {  /* Trenton */
+    display: none !important;
+  }
+}
+
+
+@media (max-width: 472px) {
+  .service-zones .zone-tag {
+    display: none !important;
+  }
+      .service-zones {
+    padding-bottom: 0 !important; /* Removes all bottom padding */
+    margin-bottom: -20px !important; /* Optional: pulls content up further */
+  }
+}
+
