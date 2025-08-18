@@ -2170,3 +2170,37 @@ header {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+/* Adjust this single value to make testimonials wider */
+.testimonials-slider {
+    max-width: 950px; /* Changed from original 800px to 900px */
+    margin: 0 auto;
+    position: relative;
+}
+
+
+
+.testimonial {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 
+                0 2px 5px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    display: none;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.testimonial.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
