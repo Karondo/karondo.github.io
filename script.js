@@ -333,33 +333,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// Testimonial Slider
-const testimonials = document.querySelectorAll('.testimonial');
-const dots = document.querySelectorAll('.slider-dot');
-let currentTestimonial = 0;
+        // Testimonial Slider Functionality - Manual Only
+        document.addEventListener('DOMContentLoaded', function() {
+            const testimonials = document.querySelectorAll('.testimonial');
+            const dots = document.querySelectorAll('.slider-dot');
+            
+            function showTestimonial(index) {
+                // Hide all testimonials
+                testimonials.forEach(testimonial => {
+                    testimonial.classList.remove('active');
+                });
+                
+                // Update dots
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // Show the selected testimonial
+                testimonials[index].classList.add('active');
+                dots[index].classList.add('active');
+            }
 
-function showTestimonial(index) {
-    testimonials.forEach(testimonial => testimonial.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
-    
-    testimonials[index].classList.add('active');
-    dots[index].classList.add('active');
-    
-    currentTestimonial = index;
-}
-
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        showTestimonial(index);
-    });
-});
-
-// Auto rotate testimonials
-setInterval(() => {
-    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-    showTestimonial(currentTestimonial);
-}, 5000);
-
+            // Add click event to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showTestimonial(index);
+                });
+            });
+        });
 // FAQ Accordion
 const faqItems = document.querySelectorAll('.faq-item');
 
