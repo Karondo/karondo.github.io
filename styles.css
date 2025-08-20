@@ -2368,7 +2368,7 @@ header {
 /* Minimum size reached (up to 380px) */
 @media (max-width: 380px) {
   .testimonial-text {
-    font-size: 1.05rem;    /* Stays at minimum */
+    font-size: 1.044rem;    /* Stays at minimum */
   }
 }
 
