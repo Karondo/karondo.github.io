@@ -2340,35 +2340,35 @@ header {
 /* Tablets (601px to 768px) */
 @media (min-width: 601px) and (max-width: 768px) {
   .testimonial-text {
-    font-size: 1.125rem;  /* 1.135 */
+    font-size: 1.100rem;  /* 1.135 */
   }
 }
 
 /* Large Mobile (481px to 600px) */
 @media (min-width: 481px) and (max-width: 600px) {
   .testimonial-text {
-    font-size: 1.115rem;  /* -0.01rem */
+    font-size: 1.065rem;  /* -0.01rem */
   }
 }
 
 /* Medium Mobile (421px to 480px) */
 @media (min-width: 421px) and (max-width: 480px) {
   .testimonial-text {
-    font-size: 1.110rem;  /* -0.01rem */
+    font-size: 1.060rem;  /* -0.01rem */
   }
 }
 
 /* Small Mobile (381px to 420px) */
 @media (min-width: 381px) and (max-width: 420px) {
   .testimonial-text {
-    font-size: 1.105rem;  /* -0.01rem */
+    font-size: 1.055rem;  /* -0.01rem */
   }
 }
 
 /* Minimum size reached (up to 380px) */
 @media (max-width: 380px) {
   .testimonial-text {
-    font-size: 1.1rem;    /* Stays at minimum */
+    font-size: 1.05rem;    /* Stays at minimum */
   }
 }
 
@@ -2380,6 +2380,6 @@ header {
   .intro-content,
   .form-container {
     position: relative;
-    left: calc((393px - 100vw) * -0.35);
+    left: calc((393px - 100vw) * -0.38);
   }
 }
