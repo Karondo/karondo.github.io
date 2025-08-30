@@ -2392,7 +2392,7 @@ header {
 
 
 /* Remove hover animations for tablets and under */
-@media (max-width: 1112px) {
+@media (max-width: 1023px) {
   /* Service cards - remove hover effects */
   .service-card {
     transition: none !important;
