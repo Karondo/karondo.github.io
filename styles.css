@@ -2383,3 +2383,44 @@ header {
     left: calc((393px - 100vw) * -0.38);
   }
 }
+
+
+
+
+
+
+
+
+/* Remove hover animations for tablets and under */
+@media (max-width: 992px) {
+  /* Service cards - remove hover effects */
+  .service-card {
+    transition: none !important;
+  }
+  
+  .service-card:hover {
+    transform: none !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05) !important;
+    border-color: #eee !important;
+  }
+  
+  /* How It Works steps - remove hover effects */
+  .step {
+    transition: none !important;
+  }
+  
+  .step:hover {
+    transform: none !important;
+  }
+  
+  /* Service card buttons - remove hover effects */
+  .service-card .btn {
+    transition: none !important;
+  }
+  
+  .service-card .btn:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: var(--primary) !important;
+  }
+}
