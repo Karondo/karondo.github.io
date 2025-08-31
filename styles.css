@@ -2699,3 +2699,24 @@ header {
         justify-content: center;
     }
 }
+
+
+
+
+
+@media (min-width: 1117px) and (max-width:  1155px) {
+.service-card:nth-child(4) p {
+ font-size: 1rem; 
+    letter-spacing: -0.3849px;
+
+}
+}
+
+@media (min-width: 1100px) and (max-width:  1116px) {
+.service-card:nth-child(4) p {
+ font-size: 0.98rem; 
+    letter-spacing: -0.385px;
+
+}
+}
+
