@@ -2449,7 +2449,7 @@ header {
 
 @media (max-width: 992px) {
     .material-symbols-outlined.vacuum-icon {
-        font-size: 55px; /* Mobile: 51px (40px + 11px) */
+        font-size: 54px; /* Mobile: 51px (40px + 11px) */
     }
 }
 
