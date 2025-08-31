@@ -2693,7 +2693,7 @@ header {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
     .service-card p {
-        min-height: 77px; /* Equalize paragraph heights */
+        min-height: 77px; /* Equalize paragraph heights */ 
         display: flex;
         align-items: center;
         justify-content: center;
