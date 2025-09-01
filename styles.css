@@ -1300,7 +1300,7 @@ html {
 
 
 
-@media (max-width: 869px) {
+@media (max-width: 890px) {
   /* Flip order (form FIRST) and increase size */
   .booking-container {
     flex-direction: column-reverse;
@@ -1874,7 +1874,7 @@ header {
 
 
 
-@media (max-width: 890px) {
+@media (max-width: 869px) {
   /* Step 5 - Subtle Padding Reduction */
   #step5 {
     padding-bottom: 15px !important; /* Reduced from original */
