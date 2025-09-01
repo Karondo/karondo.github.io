@@ -1874,7 +1874,7 @@ header {
 
 
 
-@media (max-width: 869px) {
+@media (max-width: 890px) {
   /* Step 5 - Subtle Padding Reduction */
   #step5 {
     padding-bottom: 15px !important; /* Reduced from original */
